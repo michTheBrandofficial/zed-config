@@ -1,0 +1,54 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // this doesn't
+  {
+    "context": "Editor && mode == full",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-shift-o": "agent::FocusLeft"
+    }
+  },
+  // this works
+  {
+    "context": "Pane",
+    "use_key_equivalents": true,
+    "bindings": {
+      // "ctrl-b": "workspace::ToggleRightDock",
+      "ctrl-alt-b": "workspace::ToggleRightDock",
+      "alt-left": "workspace::ActivatePreviousPane",
+      "alt-right": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "Terminal",
+    "use_key_equivalents": true,
+    "bindings": {
+      "alt-up": "workspace::ActivatePaneUp",
+      "alt-down": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "VariableList",
+    "unbind": {
+      "ctrl-alt-c": "variable_list::CopyVariableName"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-alt-c": "project_panel::CollapseAllEntries"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "unbind": {
+      "ctrl-left": "project_panel::CollapseAllEntries"
+    }
+  }
+]

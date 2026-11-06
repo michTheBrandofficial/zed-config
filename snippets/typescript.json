@@ -1,0 +1,1080 @@
+{
+  "Console Log": {
+    "prefix": "log",
+    "body": "console.log($0)"
+  },
+  "Console Warn": {
+    "prefix": "warn",
+    "body": "console.warn($0)"
+  },
+  "Console Error": {
+    "prefix": "error",
+    "body": "console.error($0)"
+  },
+  "Console Table": {
+    "prefix": "table",
+    "body": "console.table($0)"
+  },
+  "Console Time": {
+    "prefix": "time",
+    "body": [
+      "console.time('${1:label}');",
+      "$0",
+      "console.timeEnd('${1:label}');"
+    ]
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:functionName}(${2:params}): ${3:void} {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Arrow Function": {
+    "prefix": "af",
+    "body": "const ${1:functionName} = (${2:params}): ${3:void} => {$0}"
+  },
+  "Arrow Function Implicit Return": {
+    "prefix": "afe",
+    "body": "const ${1:functionName} = (${2:params}): ${3:ReturnType} => $0"
+  },
+  "Async Function": {
+    "prefix": "asf",
+    "body": [
+      "async function ${1:functionName}(${2:params}): Promise<${3:void}> {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Async Arrow Function": {
+    "prefix": "asa",
+    "body": "const ${1:functionName} = async (${2:params}): Promise<${3:void}> => {$0}"
+  },
+  "Anonymous Function": {
+    "prefix": "afn",
+    "body": ["(${1:params}): ${2:void} => {", "\t$0", "}"]
+  },
+  "IIFE": {
+    "prefix": "iife",
+    "body": ["(function(${1:params}): ${2:void} {", "\t$0", "})();"]
+  },
+  "Async IIFE": {
+    "prefix": "aiife",
+    "body": [
+      "(async function(${1:params}): Promise<${2:void}> {",
+      "\t$0",
+      "})();"
+    ]
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "For Of Loop": {
+    "prefix": "forof",
+    "body": ["for (const ${1:item} of ${2:array}) {", "\t$0", "}"]
+  },
+  "For In Loop": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "\tif (${2:object}.hasOwnProperty(${1:key})) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": ["while (${1:condition}) {", "\t$0", "}"]
+  },
+  "Do While Loop": {
+    "prefix": "dowhile",
+    "body": ["do {", "\t$0", "} while (${1:condition});"]
+  },
+  "ForEach": {
+    "prefix": "fre",
+    "body": "${1:array}.forEach((${2:item}: ${3:Type}) => {$0});"
+  },
+  "Map": {
+    "prefix": "map",
+    "body": "${1:array}.map((${2:item}: ${3:Type}): ${4:ReturnType} => $0)"
+  },
+  "Filter": {
+    "prefix": "filter",
+    "body": "${1:array}.filter((${2:item}: ${3:Type}): boolean => $0)"
+  },
+  "Reduce": {
+    "prefix": "reduce",
+    "body": "${1:array}.reduce((${2:acc}: ${3:AccType}, ${4:item}: ${5:Type}): ${3:AccType} => {$0}, ${6:initialValue})"
+  },
+  "Find": {
+    "prefix": "find",
+    "body": "${1:array}.find((${2:item}: ${3:Type}): boolean => $0)"
+  },
+  "Find Index": {
+    "prefix": "findindex",
+    "body": "${1:array}.findIndex((${2:item}: ${3:Type}): boolean => $0)"
+  },
+  "Some": {
+    "prefix": "some",
+    "body": "${1:array}.some((${2:item}: ${3:Type}): boolean => $0)"
+  },
+  "Every": {
+    "prefix": "every",
+    "body": "${1:array}.every((${2:item}: ${3:Type}): boolean => $0)"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t$0", "}"]
+  },
+  "If Else Statement": {
+    "prefix": "ifelse",
+    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"]
+  },
+  "Else If Statement": {
+    "prefix": "elseif",
+    "body": ["else if (${1:condition}) {", "\t$0", "}"]
+  },
+  "Ternary Operator": {
+    "prefix": "ternary",
+    "body": "${1:condition} ? ${2:true} : ${3:false}"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}"
+    ]
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (${1:error}: unknown) {",
+      "\tconsole.error(${1:error});",
+      "}"
+    ]
+  },
+  "Try Catch Finally": {
+    "prefix": "tryf",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (${1:error}: unknown) {",
+      "\tconsole.error(${1:error});",
+      "} finally {",
+      "\t",
+      "}"
+    ]
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": ["new Promise<${1:Type}>((resolve, reject) => {", "\t$0", "})"]
+  },
+  "Promise Then": {
+    "prefix": "then",
+    "body": [
+      "${1:promise}",
+      "\t.then((${2:result}: ${3:Type}) => {$0})",
+      "\t.catch((${4:error}: unknown) => {console.error(${4:error});});"
+    ]
+  },
+  "Async Await": {
+    "prefix": "await",
+    "body": "const ${1:result}: ${2:Type} = await ${3:promise};"
+  },
+  "Async Await Try": {
+    "prefix": "awaittry",
+    "body": [
+      "try {",
+      "\tconst ${1:result}: ${2:Type} = await ${3:promise};",
+      "\t$0",
+      "} catch (${4:error}: unknown) {",
+      "\tconsole.error(${4:error});",
+      "}"
+    ]
+  },
+  "Interface": {
+    "prefix": "int",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "\t${2:property}: ${3:Type};$0",
+      "}"
+    ]
+  },
+  "Type Alias": {
+    "prefix": "typ",
+    "body": "type ${1:TypeName} = ${2:Type};"
+  },
+  "Enum": {
+    "prefix": "enu",
+    "body": ["enum ${1:EnumName} {", "\t${2:Member} = ${3:Value},$0", "}"]
+  },
+  "Const Enum": {
+    "prefix": "cenu",
+    "body": ["const enum ${1:EnumName} {", "\t${2:Member} = ${3:Value},$0", "}"]
+  },
+  "Type Guard": {
+    "prefix": "tg",
+    "body": [
+      "function is${1:Type}(value: unknown): value is ${1:Type} {",
+      "\treturn $0;",
+      "}"
+    ]
+  },
+  "Type Assertion": {
+    "prefix": "as",
+    "body": "const ${1:variable} = ${2:value} as ${3:Type};"
+  },
+  "Generic Function": {
+    "prefix": "gfn",
+    "body": [
+      "function ${1:functionName}<${2:T}>(${3:param}: ${2:T}): ${4:ReturnType} {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Generic Arrow Function": {
+    "prefix": "gaf",
+    "body": "const ${1:functionName} = <${2:T}>(${3:param}: ${2:T}): ${4:ReturnType} => {$0}"
+  },
+  "Generic Interface": {
+    "prefix": "gint",
+    "body": [
+      "interface ${1:InterfaceName}<${2:T}> {",
+      "\t${3:property}: ${2:T};$0",
+      "}"
+    ]
+  },
+  "Generic Type": {
+    "prefix": "gtyp",
+    "body": "type ${1:TypeName}<${2:T}> = ${3:Type};"
+  },
+  "Mapped Type": {
+    "prefix": "mtyp",
+    "body": "type ${1:TypeName}<T> = { [K in keyof T]: ${2:Type} };"
+  },
+  "Conditional Type": {
+    "prefix": "ctyp",
+    "body": "type ${1:TypeName}<T> = T extends ${2:Type} ? ${3:TrueType} : ${4:FalseType};"
+  },
+  "Utility Type Pick": {
+    "prefix": "pick",
+    "body": "type ${1:NewType} = Pick<${2:Type}, '${3:keys}'>;"
+  },
+  "Utility Type Omit": {
+    "prefix": "omit",
+    "body": "type ${1:NewType} = Omit<${2:Type}, '${3:keys}'>;"
+  },
+  "Utility Type Partial": {
+    "prefix": "partial",
+    "body": "type ${1:NewType} = Partial<${2:Type}>;"
+  },
+  "Utility Type Required": {
+    "prefix": "required",
+    "body": "type ${1:NewType} = Required<${2:Type}>;"
+  },
+  "Utility Type Readonly": {
+    "prefix": "readonly",
+    "body": "type ${1:NewType} = Readonly<${2:Type}>;"
+  },
+  "Utility Type Record": {
+    "prefix": "record",
+    "body": "type ${1:NewType} = Record<${2:Keys}, ${3:Type}>;"
+  },
+  "Utility Type Exclude": {
+    "prefix": "exclude",
+    "body": "type ${1:NewType} = Exclude<${2:Type}, ${3:ExcludedType}>;"
+  },
+  "Utility Type Extract": {
+    "prefix": "extract",
+    "body": "type ${1:NewType} = Extract<${2:Type}, ${3:ExtractedType}>;"
+  },
+  "Utility Type NonNullable": {
+    "prefix": "nonnull",
+    "body": "type ${1:NewType} = NonNullable<${2:Type}>;"
+  },
+  "Utility Type ReturnType": {
+    "prefix": "rettyp",
+    "body": "type ${1:NewType} = ReturnType<typeof ${2:function}>;"
+  },
+  "Utility Type Parameters": {
+    "prefix": "params",
+    "body": "type ${1:NewType} = Parameters<typeof ${2:function}>;"
+  },
+  "Class": {
+    "prefix": "cls",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tconstructor(${2:params}) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Class With Properties": {
+    "prefix": "clsp",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tprivate ${2:property}: ${3:Type};",
+      "",
+      "\tconstructor(${2:property}: ${3:Type}) {",
+      "\t\tthis.${2:property} = ${2:property};",
+      "\t}$0",
+      "}"
+    ]
+  },
+  "Class With Method": {
+    "prefix": "clsm",
+    "body": [
+      "class ${1:ClassName} {",
+      "\tprivate ${2:property}: ${3:Type};",
+      "",
+      "\tconstructor(${2:property}: ${3:Type}) {",
+      "\t\tthis.${2:property} = ${2:property};",
+      "\t}",
+      "",
+      "\tpublic ${4:methodName}(${5:params}): ${6:ReturnType} {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Abstract Class": {
+    "prefix": "acls",
+    "body": [
+      "abstract class ${1:ClassName} {",
+      "\tabstract ${2:methodName}(${3:params}): ${4:ReturnType};$0",
+      "}"
+    ]
+  },
+  "Class Implements": {
+    "prefix": "clsi",
+    "body": [
+      "class ${1:ClassName} implements ${2:InterfaceName} {",
+      "\tconstructor(${3:params}) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Class Extends": {
+    "prefix": "clse",
+    "body": [
+      "class ${1:ClassName} extends ${2:ParentClass} {",
+      "\tconstructor(${3:params}) {",
+      "\t\tsuper(${3:params});",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Class Getter": {
+    "prefix": "get",
+    "body": [
+      "get ${1:propertyName}(): ${2:Type} {",
+      "\treturn this.${3:_property};",
+      "}"
+    ]
+  },
+  "Class Setter": {
+    "prefix": "set",
+    "body": [
+      "set ${1:propertyName}(${2:value}: ${3:Type}) {",
+      "\tthis.${4:_property} = ${2:value};",
+      "}"
+    ]
+  },
+  "Static Method": {
+    "prefix": "static",
+    "body": [
+      "static ${1:methodName}(${2:params}): ${3:ReturnType} {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Generic Class": {
+    "prefix": "gcls",
+    "body": [
+      "class ${1:ClassName}<${2:T}> {",
+      "\tprivate ${3:property}: ${2:T};",
+      "",
+      "\tconstructor(${3:property}: ${2:T}) {",
+      "\t\tthis.${3:property} = ${3:property};",
+      "\t}$0",
+      "}"
+    ]
+  },
+  "Decorator": {
+    "prefix": "dec",
+    "body": [
+      "function ${1:decoratorName}(${2:params}) {",
+      "\treturn function(target: any) {",
+      "\t\t$0",
+      "\t};",
+      "}"
+    ]
+  },
+  "Method Decorator": {
+    "prefix": "mdec",
+    "body": [
+      "function ${1:decoratorName}(target: any, propertyKey: string, descriptor: PropertyDescriptor) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Property Decorator": {
+    "prefix": "pdec",
+    "body": [
+      "function ${1:decoratorName}(target: any, propertyKey: string) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Parameter Decorator": {
+    "prefix": "pardec",
+    "body": [
+      "function ${1:decoratorName}(target: any, propertyKey: string, parameterIndex: number) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${1:NamespaceName} {",
+      "\texport ${2:declaration}$0",
+      "}"
+    ]
+  },
+  "Module": {
+    "prefix": "module",
+    "body": ["module ${1:ModuleName} {", "\texport ${2:declaration}$0", "}"]
+  },
+  "Declare Module": {
+    "prefix": "decmod",
+    "body": [
+      "declare module '${1:moduleName}' {",
+      "\texport ${2:declaration}$0",
+      "}"
+    ]
+  },
+  "Declare Global": {
+    "prefix": "decglobal",
+    "body": ["declare global {", "\t${1:declaration}$0", "}"]
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": "import ${1:module} from '${2:path}';"
+  },
+  "Import Named": {
+    "prefix": "impn",
+    "body": "import { ${1:name} } from '${2:path}';"
+  },
+  "Import Type": {
+    "prefix": "impt",
+    "body": "import type { ${1:Type} } from '${2:path}';"
+  },
+  "Import As": {
+    "prefix": "impa",
+    "body": "import * as ${1:alias} from '${2:path}';"
+  },
+  "Import Dynamic": {
+    "prefix": "impd",
+    "body": "const ${1:module} = await import('${2:path}');"
+  },
+  "Export Default": {
+    "prefix": "exp",
+    "body": "export default ${1:name};"
+  },
+  "Export Named": {
+    "prefix": "expn",
+    "body": "export { ${1:name} };"
+  },
+  "Export Type": {
+    "prefix": "expt",
+    "body": "export type { ${1:Type} };"
+  },
+  "Export All": {
+    "prefix": "expa",
+    "body": "export * from '${1:path}';"
+  },
+  "Export Function": {
+    "prefix": "expf",
+    "body": [
+      "export function ${1:functionName}(${2:params}): ${3:ReturnType} {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Export Const": {
+    "prefix": "expc",
+    "body": "export const ${1:name}: ${2:Type} = ${3:value};"
+  },
+  "Export Interface": {
+    "prefix": "expi",
+    "body": [
+      "export interface ${1:InterfaceName} {",
+      "\t${2:property}: ${3:Type};$0",
+      "}"
+    ]
+  },
+  "Export Type Alias": {
+    "prefix": "expta",
+    "body": "export type ${1:TypeName} = ${2:Type};"
+  },
+  "Const": {
+    "prefix": "const",
+    "body": "const ${1:name}: ${2:Type} = ${3:value};"
+  },
+  "Let": {
+    "prefix": "let",
+    "body": "let ${1:name}: ${2:Type} = ${3:value};"
+  },
+  "Var": {
+    "prefix": "var",
+    "body": "var ${1:name}: ${2:Type} = ${3:value};"
+  },
+  "Const Assertion": {
+    "prefix": "cass",
+    "body": "const ${1:name} = ${2:value} as const;"
+  },
+  "Destructuring Array": {
+    "prefix": "desa",
+    "body": "const [${1:first}, ${2:second}]: [${3:Type1}, ${4:Type2}] = ${5:array};"
+  },
+  "Destructuring Object": {
+    "prefix": "deso",
+    "body": "const { ${1:property} }: { ${1:property}: ${2:Type} } = ${3:object};"
+  },
+  "Spread Array": {
+    "prefix": "spra",
+    "body": "[...${1:array}]"
+  },
+  "Spread Object": {
+    "prefix": "spro",
+    "body": "{ ...${1:object} }"
+  },
+  "Rest Parameters": {
+    "prefix": "rest",
+    "body": "(...${1:args}: ${2:Type}[]) => {$0}"
+  },
+  "Object Literal": {
+    "prefix": "obj",
+    "body": ["{", "\t${1:key}: ${2:value}$0", "}"]
+  },
+  "Typed Object": {
+    "prefix": "tobj",
+    "body": [
+      "const ${1:name}: {",
+      "\t${2:key}: ${3:Type};$0",
+      "} = {",
+      "\t${2:key}: ${4:value}",
+      "};"
+    ]
+  },
+  "Object Method": {
+    "prefix": "objm",
+    "body": [
+      "{",
+      "\t${1:methodName}(${2:params}): ${3:ReturnType} {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Object Shorthand": {
+    "prefix": "objs",
+    "body": "{ ${1:property} }"
+  },
+  "Object Computed Property": {
+    "prefix": "objc",
+    "body": ["{", "\t[${1:key}]: ${2:value}$0", "}"]
+  },
+  "Array": {
+    "prefix": "arr",
+    "body": "[${1:value}]"
+  },
+  "Typed Array": {
+    "prefix": "tarr",
+    "body": "const ${1:name}: ${2:Type}[] = [${3:values}];"
+  },
+  "Array Generic": {
+    "prefix": "arrg",
+    "body": "const ${1:name}: Array<${2:Type}> = [${3:values}];"
+  },
+  "Readonly Array": {
+    "prefix": "rarr",
+    "body": "const ${1:name}: readonly ${2:Type}[] = [${3:values}];"
+  },
+  "Tuple": {
+    "prefix": "tup",
+    "body": "const ${1:name}: [${2:Type1}, ${3:Type2}] = [${4:value1}, ${5:value2}];"
+  },
+  "Array From": {
+    "prefix": "afrom",
+    "body": "Array.from<${1:Type}>(${2:arrayLike})"
+  },
+  "Array Of": {
+    "prefix": "aof",
+    "body": "Array.of<${1:Type}>(${2:elements})"
+  },
+  "Set": {
+    "prefix": "newset",
+    "body": "new Set<${1:Type}>([${2:values}])"
+  },
+  "Map": {
+    "prefix": "newmap",
+    "body": "new Map<${1:KeyType}, ${2:ValueType}>([[${3:key}, ${4:value}]])"
+  },
+  "WeakSet": {
+    "prefix": "newweakset",
+    "body": "new WeakSet<${1:Type}>([${2:objects}])"
+  },
+  "WeakMap": {
+    "prefix": "newweakmap",
+    "body": "new WeakMap<${1:KeyType}, ${2:ValueType}>([[${3:key}, ${4:value}]])"
+  },
+  "Template Literal": {
+    "prefix": "tpl",
+    "body": "`${1:text} \\${${2:variable}}`"
+  },
+  "Template Literal Type": {
+    "prefix": "tlit",
+    "body": "type ${1:TypeName} = `${2:prefix}\\${${3:Type}}`;"
+  },
+  "Tagged Template": {
+    "prefix": "ttag",
+    "body": "${1:tag}`${2:text} \\${${3:variable}}`"
+  },
+  "SetTimeout": {
+    "prefix": "sto",
+    "body": ["setTimeout(() => {", "\t$0", "}, ${1:delay});"]
+  },
+  "SetInterval": {
+    "prefix": "si",
+    "body": ["setInterval(() => {", "\t$0", "}, ${1:delay});"]
+  },
+  "ClearTimeout": {
+    "prefix": "cto",
+    "body": "clearTimeout(${1:timeoutId});"
+  },
+  "ClearInterval": {
+    "prefix": "ci",
+    "body": "clearInterval(${1:intervalId});"
+  },
+  "Fetch": {
+    "prefix": "fetch",
+    "body": [
+      "fetch('${1:url}')",
+      "\t.then((response: Response) => response.json())",
+      "\t.then((data: ${2:Type}) => {$0})",
+      "\t.catch((error: unknown) => console.error(error));"
+    ]
+  },
+  "Fetch Async": {
+    "prefix": "feta",
+    "body": [
+      "const response: Response = await fetch('${1:url}');",
+      "const data: ${2:Type} = await response.json();",
+      "$0"
+    ]
+  },
+  "Fetch POST": {
+    "prefix": "fetp",
+    "body": [
+      "fetch('${1:url}', {",
+      "\tmethod: 'POST',",
+      "\theaders: {",
+      "\t\t'Content-Type': 'application/json'",
+      "\t},",
+      "\tbody: JSON.stringify(${2:data})",
+      "})",
+      "\t.then((response: Response) => response.json())",
+      "\t.then((data: ${3:Type}) => {$0})",
+      "\t.catch((error: unknown) => console.error(error));"
+    ]
+  },
+  "Fetch Generic": {
+    "prefix": "fetg",
+    "body": [
+      "async function ${1:fetchData}<T>(url: string): Promise<T> {",
+      "\tconst response: Response = await fetch(url);",
+      "\tconst data: T = await response.json();",
+      "\treturn data;",
+      "}"
+    ]
+  },
+  "JSON Parse": {
+    "prefix": "jparse",
+    "body": "JSON.parse(${1:jsonString}) as ${2:Type}"
+  },
+  "JSON Stringify": {
+    "prefix": "jstr",
+    "body": "JSON.stringify(${1:object})"
+  },
+  "JSON Stringify Pretty": {
+    "prefix": "jstrp",
+    "body": "JSON.stringify(${1:object}, null, 2)"
+  },
+  "Object Keys": {
+    "prefix": "okeys",
+    "body": "Object.keys(${1:object}) as Array<keyof typeof ${1:object}>"
+  },
+  "Object Values": {
+    "prefix": "ovals",
+    "body": "Object.values(${1:object})"
+  },
+  "Object Entries": {
+    "prefix": "oents",
+    "body": "Object.entries(${1:object}) as Array<[keyof typeof ${1:object}, typeof ${1:object}[keyof typeof ${1:object}]]>"
+  },
+  "Object Assign": {
+    "prefix": "oassign",
+    "body": "Object.assign<${1:Type}, ${2:SourceType}>({}, ${3:target}, ${4:source})"
+  },
+  "Object Freeze": {
+    "prefix": "ofreeze",
+    "body": "Object.freeze(${1:object})"
+  },
+  "Object Seal": {
+    "prefix": "oseal",
+    "body": "Object.seal(${1:object})"
+  },
+  "Object Create": {
+    "prefix": "ocreate",
+    "body": "Object.create<${1:Type}>(${2:prototype})"
+  },
+  "LocalStorage Set": {
+    "prefix": "lsset",
+    "body": "localStorage.setItem('${1:key}', ${2:value});"
+  },
+  "LocalStorage Get": {
+    "prefix": "lsget",
+    "body": "localStorage.getItem('${1:key}')"
+  },
+  "LocalStorage Remove": {
+    "prefix": "lsrem",
+    "body": "localStorage.removeItem('${1:key}');"
+  },
+  "LocalStorage Clear": {
+    "prefix": "lsclear",
+    "body": "localStorage.clear();"
+  },
+  "SessionStorage Set": {
+    "prefix": "ssset",
+    "body": "sessionStorage.setItem('${1:key}', ${2:value});"
+  },
+  "SessionStorage Get": {
+    "prefix": "ssget",
+    "body": "sessionStorage.getItem('${1:key}')"
+  },
+  "Document QuerySelector": {
+    "prefix": "qs",
+    "body": "document.querySelector<${1:HTMLElement}>('${2:selector}')"
+  },
+  "Document QuerySelectorAll": {
+    "prefix": "qsa",
+    "body": "document.querySelectorAll<${1:HTMLElement}>('${2:selector}')"
+  },
+  "Document GetElementById": {
+    "prefix": "gel",
+    "body": "document.getElementById('${1:id}') as ${2:HTMLElement}"
+  },
+  "Document GetElementsByClassName": {
+    "prefix": "gclass",
+    "body": "document.getElementsByClassName('${1:className}') as HTMLCollectionOf<${2:HTMLElement}>"
+  },
+  "Document GetElementsByTagName": {
+    "prefix": "gtag",
+    "body": "document.getElementsByTagName('${1:tagName}') as HTMLCollectionOf<${2:HTMLElement}>"
+  },
+  "Document CreateElement": {
+    "prefix": "cel",
+    "body": "document.createElement('${1:tagName}')"
+  },
+  "AddEventListener": {
+    "prefix": "ael",
+    "body": [
+      "${1:element}.addEventListener('${2:event}', (${3:e}: ${4:Event}) => {",
+      "\t$0",
+      "});"
+    ]
+  },
+  "RemoveEventListener": {
+    "prefix": "rel",
+    "body": "${1:element}.removeEventListener('${2:event}', ${3:handler});"
+  },
+  "DOMContentLoaded": {
+    "prefix": "domready",
+    "body": [
+      "document.addEventListener('DOMContentLoaded', () => {",
+      "\t$0",
+      "});"
+    ]
+  },
+  "Window Load": {
+    "prefix": "winload",
+    "body": ["window.addEventListener('load', () => {", "\t$0", "});"]
+  },
+  "RequestAnimationFrame": {
+    "prefix": "raf",
+    "body": ["requestAnimationFrame(() => {", "\t$0", "});"]
+  },
+  "Generator Function": {
+    "prefix": "gen",
+    "body": [
+      "function* ${1:generatorName}(${2:params}): Generator<${3:YieldType}, ${4:ReturnType}, ${5:NextType}> {",
+      "\tyield $0;",
+      "}"
+    ]
+  },
+  "Async Generator": {
+    "prefix": "agen",
+    "body": [
+      "async function* ${1:generatorName}(${2:params}): AsyncGenerator<${3:YieldType}, ${4:ReturnType}, ${5:NextType}> {",
+      "\tyield $0;",
+      "}"
+    ]
+  },
+  "Proxy": {
+    "prefix": "proxy",
+    "body": [
+      "new Proxy<${1:Type}>(${2:target}, {",
+      "\tget(target: ${1:Type}, prop: string | symbol): any {",
+      "\t\t$0",
+      "\t}",
+      "})"
+    ]
+  },
+  "Reflect Get": {
+    "prefix": "rget",
+    "body": "Reflect.get(${1:target}, '${2:property}')"
+  },
+  "Symbol": {
+    "prefix": "sym",
+    "body": "Symbol('${1:description}')"
+  },
+  "Symbol For": {
+    "prefix": "symfor",
+    "body": "Symbol.for('${1:key}')"
+  },
+  "RegExp": {
+    "prefix": "re",
+    "body": "/${1:pattern}/${2:flags}"
+  },
+  "RegExp Test": {
+    "prefix": "retest",
+    "body": "/${1:pattern}/.test(${2:string})"
+  },
+  "String Match": {
+    "prefix": "match",
+    "body": "${1:string}.match(/${2:pattern}/${3:flags})"
+  },
+  "String Replace": {
+    "prefix": "replace",
+    "body": "${1:string}.replace(/${2:pattern}/${3:flags}, '${4:replacement}')"
+  },
+  "String Split": {
+    "prefix": "split",
+    "body": "${1:string}.split('${2:separator}')"
+  },
+  "String Trim": {
+    "prefix": "trim",
+    "body": "${1:string}.trim()"
+  },
+  "String Includes": {
+    "prefix": "includes",
+    "body": "${1:string}.includes('${2:searchString}')"
+  },
+  "String StartsWith": {
+    "prefix": "startswith",
+    "body": "${1:string}.startsWith('${2:searchString}')"
+  },
+  "String EndsWith": {
+    "prefix": "endswith",
+    "body": "${1:string}.endsWith('${2:searchString}')"
+  },
+  "String PadStart": {
+    "prefix": "padstart",
+    "body": "${1:string}.padStart(${2:targetLength}, '${3:padString}')"
+  },
+  "String PadEnd": {
+    "prefix": "padend",
+    "body": "${1:string}.padEnd(${2:targetLength}, '${3:padString}')"
+  },
+  "String Repeat": {
+    "prefix": "repeat",
+    "body": "${1:string}.repeat(${2:count})"
+  },
+  "Math Random": {
+    "prefix": "mrand",
+    "body": "Math.random()"
+  },
+  "Math Floor": {
+    "prefix": "mfloor",
+    "body": "Math.floor(${1:number})"
+  },
+  "Math Ceil": {
+    "prefix": "mceil",
+    "body": "Math.ceil(${1:number})"
+  },
+  "Math Round": {
+    "prefix": "mround",
+    "body": "Math.round(${1:number})"
+  },
+  "Math Max": {
+    "prefix": "mmax",
+    "body": "Math.max(${1:numbers})"
+  },
+  "Math Min": {
+    "prefix": "mmin",
+    "body": "Math.min(${1:numbers})"
+  },
+  "Date Now": {
+    "prefix": "dnow",
+    "body": "Date.now()"
+  },
+  "New Date": {
+    "prefix": "newdate",
+    "body": "new Date()"
+  },
+  "Date ISO String": {
+    "prefix": "diso",
+    "body": "new Date().toISOString()"
+  },
+  "Throw Error": {
+    "prefix": "throw",
+    "body": "throw new Error('${1:message}');"
+  },
+  "Custom Error": {
+    "prefix": "cerr",
+    "body": [
+      "class ${1:CustomError} extends Error {",
+      "\tconstructor(message: string) {",
+      "\t\tsuper(message);",
+      "\t\tthis.name = '${1:CustomError}';",
+      "\t}",
+      "}"
+    ]
+  },
+  "Typeof": {
+    "prefix": "typeof",
+    "body": "typeof ${1:variable} === '${2:type}'"
+  },
+  "Instanceof": {
+    "prefix": "instanceof",
+    "body": "${1:object} instanceof ${2:Class}"
+  },
+  "Nullish Coalescing": {
+    "prefix": "nullish",
+    "body": "${1:value} ?? ${2:defaultValue}"
+  },
+  "Optional Chaining": {
+    "prefix": "opt",
+    "body": "${1:object}?.${2:property}"
+  },
+  "Non-null Assertion": {
+    "prefix": "nonnulla",
+    "body": "${1:value}!"
+  },
+  "Satisfies Operator": {
+    "prefix": "satisfies",
+    "body": "${1:expression} satisfies ${2:Type}"
+  },
+  "Comment Block": {
+    "prefix": "com",
+    "body": ["/**", " * ${1:description}", " */"]
+  },
+  "TSDoc Function": {
+    "prefix": "tsdoc",
+    "body": [
+      "/**",
+      " * ${1:description}",
+      " * @param {${2:type}} ${3:paramName} - ${4:description}",
+      " * @returns {${5:type}} ${6:description}",
+      " */"
+    ]
+  },
+  "TSDoc Class": {
+    "prefix": "tsdocc",
+    "body": [
+      "/**",
+      " * ${1:description}",
+      " * @class ${2:ClassName}",
+      " * @example",
+      " * ${3:example}",
+      " */"
+    ]
+  },
+  "TSDoc Interface": {
+    "prefix": "tsdoci",
+    "body": [
+      "/**",
+      " * ${1:description}",
+      " * @interface ${2:InterfaceName}",
+      " * @property {${3:type}} ${4:propertyName} - ${5:description}",
+      " */"
+    ]
+  },
+  "Index Signature": {
+    "prefix": "isig",
+    "body": "[${1:key}: ${2:KeyType}]: ${3:ValueType};"
+  },
+  "Readonly Property": {
+    "prefix": "rprop",
+    "body": "readonly ${1:property}: ${2:Type};"
+  },
+  "Optional Property": {
+    "prefix": "oprop",
+    "body": "${1:property}?: ${2:Type};"
+  },
+  "Union Type": {
+    "prefix": "union",
+    "body": "type ${1:TypeName} = ${2:Type1} | ${3:Type2};"
+  },
+  "Intersection Type": {
+    "prefix": "inter",
+    "body": "type ${1:TypeName} = ${2:Type1} & ${3:Type2};"
+  },
+  "Literal Type": {
+    "prefix": "lit",
+    "body": "type ${1:TypeName} = '${2:value1}' | '${3:value2}';"
+  },
+  "Const Type Parameters": {
+    "prefix": "ctpar",
+    "body": "function ${1:functionName}<const T>(${2:param}: T): T {$0}"
+  },
+  "As Const": {
+    "prefix": "asconst",
+    "body": "${1:value} as const"
+  },
+  "keyof Operator": {
+    "prefix": "keyof",
+    "body": "keyof ${1:Type}"
+  },
+  "typeof Operator": {
+    "prefix": "typeofop",
+    "body": "typeof ${1:value}"
+  },
+  "infer Keyword": {
+    "prefix": "infer",
+    "body": "T extends ${1:Type}<infer ${2:U}> ? ${2:U} : ${3:FallbackType}"
+  },
+  "Awaited Type": {
+    "prefix": "awaited",
+    "body": "type ${1:TypeName} = Awaited<${2:PromiseType}>;"
+  }
+}

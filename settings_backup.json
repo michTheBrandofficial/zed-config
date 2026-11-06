@@ -1,0 +1,333 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cursor_animation": {
+    "enabled": true
+  },
+  "title_bar": {
+    "show_worktree_name": false
+  },
+  "cursor_blink": true,
+  "cursor_shape": "bar",
+  "cli_default_open_behavior": "existing_window",
+  "outline_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "assistant": {
+    "version": "2",
+    "provider": {
+      "name": "openai",
+      "api_url": "https://openrouter.ai",
+      "api_key": "YOUR_OPENROUTER_API_KEY_HERE",
+      "default_model": "deepseek/deepseek-chat"
+    }
+  },
+
+  "use_system_path_prompts": false,
+  "use_system_prompts": false,
+  "show_edit_predictions": false,
+  "icon_theme": "Colored Zed Icons Theme Light",
+  "agent_servers": {
+    "github-copilot-cli": {
+      "default_config_options": {
+        "allow_all": "on",
+        "mode": "https://agentclientprotocol.com/protocol/session-modes#plan",
+        "model": "claude-haiku-4.5"
+      },
+      "favorite_config_option_values": {
+        "model": ["gpt-4.1"]
+      },
+      "type": "registry"
+    },
+    "auggie": {
+      "default_mode": "ask",
+      "favorite_config_option_values": {
+        "model": ["claude-sonnet-4"]
+      },
+      "type": "registry"
+    }
+  },
+  "agent": {
+    "sandbox_permissions": {
+      "allow_unsandboxed": true
+    },
+    "profiles": {
+      "plan": {
+        "default_model": {
+          "provider": "zed.dev",
+          "model": "claude-sonnet-4-6",
+          "enable_thinking": true,
+          "effort": "high"
+        },
+        "name": "Plan",
+        "tools": {
+          "search_web": true,
+          "diagnostics": true,
+          "fetch": true,
+          "find_path": true,
+          "list_directory": true,
+          "open": true,
+          "thinking": true,
+          "read_file": true,
+          "copy_path": false
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {
+          "Context7": {
+            "tools": {
+              "resolve-library-id": true,
+              "query-docs": true
+            }
+          }
+        }
+      }
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-haiku-4-5",
+      "enable_thinking": true
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "minimap": {
+    "thumb_border": "left_open"
+  },
+  "scrollbar": {
+    "show": "never",
+    "axes": {
+      "horizontal": true
+    }
+  },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "context_servers": {
+    "Context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-4c84ae8c-8ffe-4777-a6cc-8ba09dc11060"
+      ]
+    }
+  },
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": false
+  },
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "buffer_font_weight": 450.0,
+  "soft_wrap": "editor_width",
+  "buffer_line_height": "comfortable",
+  "hard_tabs": true,
+  "tab_size": 2,
+  "ui_font_family": "Cascadia Code",
+  "buffer_font_family": "Geist Mono",
+  "terminal": {
+    "font_weight": 450.0,
+    "dock": "bottom",
+    "shell": {
+      "with_arguments": {
+        "program": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
+        "args": ["--login", "-i"]
+      }
+    },
+    "font_size": 14.0,
+    "font_family": "Geist Mono"
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "light",
+    "light": "One Light",
+    "dark": "Vika"
+  },
+  "relative_line_numbers": "enabled",
+  "colorize_brackets": true,
+  "profiles": {
+    "TDD": {
+      "settings": {
+        "bottom_dock_layout": "right_aligned",
+        "terminal": {
+          "dock": "right"
+        }
+      }
+    },
+    "Zen": {
+      "settings": {
+        "tab_bar": {
+          "show": false
+        },
+        "status_bar": {
+          "experimental.show": false
+        },
+        "title_bar": {
+          "show_menus": false,
+          "show_project_items": false
+        },
+        "toolbar": {
+          "breadcrumbs": false,
+          "quick_actions": false
+        },
+        "bottom_dock_layout": "left_aligned",
+        "terminal": {
+          "dock": "left"
+        },
+        "gutter": {
+          "line_numbers": true
+        }
+      }
+    }
+  },
+
+  // lint and formatting
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    },
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onType",
+          "disableNestedConfig": false,
+          "fixKind": "safe_fix",
+          "typeAware": true,
+          "unusedDisableDirectives": "deny"
+        }
+      }
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "fmt.configPath": null,
+          "run": "onSave"
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["cn"],
+        "classRegex": [
+          "(?:class|className|cls)\\s*(?::=|:|=)\\s*\"([^\"]*)\"",
+          "(?:class|className|cls):\\s*\\n\\s*\"([^\"]*)\""
+        ]
+      }
+    }
+  },
+
+  // formatting settings
+  "format_on_save": "on",
+  "prettier": {
+    "allowed": false
+  },
+  "formatter": [
+    {
+      "language_server": {
+        "name": "oxfmt"
+      }
+    }
+  ],
+
+  // settings for all languages
+  "languages": {
+    "Shell Script": {
+      "show_edit_predictions": true
+    },
+    "JSON": {
+      "language_servers": ["oxfmt", "!oxlint", "!biome", "..."]
+    },
+    "CSS": {
+      "show_edit_predictions": true,
+      "language_servers": ["!biome", "oxfmt", "!oxlint", "..."]
+    },
+    "TypeScript": {
+      "show_edit_predictions": true,
+      "language_servers": [
+        "!tsgo",
+        "oxfmt",
+        "vtsls",
+        "oxlint",
+        "!eslint",
+        "!biome",
+        "tailwindcss-language-server"
+      ]
+    },
+    "TSX": {
+      "show_edit_predictions": true,
+      "language_servers": [
+        "!biome",
+        "!tsgo",
+        "oxfmt",
+        "!oxlint",
+        "vtsls",
+        "!eslint",
+        "tailwindcss-language-server"
+      ]
+    },
+    "JavaScript": {
+      "language_servers": [
+        "!tsgo",
+        "oxfmt",
+        "vtsls",
+        "!oxlint",
+        "!eslint",
+        "!biome",
+        "tailwindcss-language-server"
+      ],
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        },
+        {
+          "code_action": "source.fixAll.oxc"
+        }
+      ]
+    }
+  }
+}
